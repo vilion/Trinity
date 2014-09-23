@@ -124,9 +124,9 @@ function! <SID>Trinity_InitSourceExplorer()
 
     " // Set the height of Source Explorer window                                  "
     if has("unix")
-        let g:SrcExpl_winHeight = 13
+        let g:SrcExpl_winWidth = 13
     else
-        let g:SrcExpl_winHeight = 8
+        let g:SrcExpl_winWidth = 8
     endif
     " // Set 1 ms for refreshing the Source Explorer                               "
     let g:SrcExpl_refreshTime = 1
@@ -275,7 +275,7 @@ function! <SID>Trinity_UpdateWindow()
         if l:source_explorer_winnr > 0
             silent! exe l:source_explorer_winnr . "wincmd " . "w"
            
-
+            silent! exe g:SrcExpl_winWidth . "wincmd " . "w |"
         endif
 
         let l:rtn = <SID>Trinity_GetEditWin()
