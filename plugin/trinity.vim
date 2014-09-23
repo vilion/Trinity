@@ -275,7 +275,7 @@ function! <SID>Trinity_UpdateWindow()
         if l:source_explorer_winnr > 0
             silent! exe l:source_explorer_winnr . "wincmd " . "w"
            
-            silent! exe g:SrcExpl_winHeight . " wincmd " . "_"
+
         endif
 
         let l:rtn = <SID>Trinity_GetEditWin()
