@@ -330,17 +330,17 @@ function! <SID>Trinity_ToggleNERDTree()
         if s:nerd_tree_switch == 0
             call <SID>Trinity_InitNERDTree()
             VimFilerExplorer
-            silent! exe " wincmd " . "L"
+            silent! exe "wincmd " . "L"
             let s:nerd_tree_switch = 1
         endif
     else
         if s:nerd_tree_switch == 1
-            
+            VimFilerExplorer
             let s:nerd_tree_switch = 0
         else
             call <SID>Trinity_InitNERDTree()
             VimFilerExplorer
-            silent! exe " wincmd " . "L"
+            silent! exe "wincmd " . "L"
             let s:nerd_tree_switch = 1
         endif
     endif
@@ -480,7 +480,7 @@ function! <SID>Trinity_Toggle()
         let s:source_explorer_switch = 1
         call <SID>Trinity_InitNERDTree()
         VimFilerExplorer
-        silent! exe " wincmd " . "L"
+        silent! exe "wincmd " . "L"
         let s:nerd_tree_switch = 1
         let s:Trinity_switch = 1
     endif
