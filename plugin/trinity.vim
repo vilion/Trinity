@@ -466,7 +466,7 @@ function! <SID>Trinity_Toggle()
             let s:source_explorer_switch = 0
         endif
         if s:nerd_tree_switch == 1
-            
+            VimFilerExplorer
             let s:nerd_tree_switch = 0
         endif
         let s:Trinity_switch = 0
