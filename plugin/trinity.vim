@@ -124,9 +124,9 @@ function! <SID>Trinity_InitSourceExplorer()
 
     " // Set the height of Source Explorer window                                  "
     if has("unix")
-        let g:SrcExpl_winWidth = 30
+        let g:SrcExpl_winWidth = 100
     else
-        let g:SrcExpl_winWidth = 30
+        let g:SrcExpl_winWidth = 100
     endif
     " // Set 1 ms for refreshing the Source Explorer                               "
     let g:SrcExpl_refreshTime = 1
@@ -330,7 +330,7 @@ function! <SID>Trinity_ToggleNERDTree()
         if s:nerd_tree_switch == 0
             call <SID>Trinity_InitNERDTree()
             VimFilerExplorer
-            silent! exe l:source_explorer_winnr . "wincmd " . "L"
+            silent! exe " wincmd " . "L"
             let s:nerd_tree_switch = 1
         endif
     else
@@ -340,7 +340,7 @@ function! <SID>Trinity_ToggleNERDTree()
         else
             call <SID>Trinity_InitNERDTree()
             VimFilerExplorer
-            silent! exe l:source_explorer_winnr . "wincmd " . "L"
+            silent! exe " wincmd " . "L"
             let s:nerd_tree_switch = 1
         endif
     endif
@@ -480,7 +480,7 @@ function! <SID>Trinity_Toggle()
         let s:source_explorer_switch = 1
         call <SID>Trinity_InitNERDTree()
         VimFilerExplorer
-        silent! exe l:source_explorer_winnr . "wincmd " . "L"
+        silent! exe " wincmd " . "L"
         let s:nerd_tree_switch = 1
         let s:Trinity_switch = 1
     endif
