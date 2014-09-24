@@ -124,9 +124,9 @@ function! <SID>Trinity_InitSourceExplorer()
 
     " // Set the height of Source Explorer window                                  "
     if has("unix")
-        let g:SrcExpl_winWidth = 100
+        let g:SrcExpl_winWidth = 70
     else
-        let g:SrcExpl_winWidth = 100
+        let g:SrcExpl_winWidth = 70
     endif
     " // Set 1 ms for refreshing the Source Explorer                               "
     let g:SrcExpl_refreshTime = 1
