@@ -329,16 +329,19 @@ function! <SID>Trinity_ToggleNERDTree()
     if s:Trinity_switch == 0
         if s:nerd_tree_switch == 0
             call <SID>Trinity_InitNERDTree()
+            :set noautochdir
             VimFilerExplorer
             silent! exe "wincmd " . "L"
             let s:nerd_tree_switch = 1
         endif
     else
         if s:nerd_tree_switch == 1
+            :set noautochdir
             VimFilerExplorer
             let s:nerd_tree_switch = 0
         else
             call <SID>Trinity_InitNERDTree()
+            :set noautochdir
             VimFilerExplorer
             silent! exe "wincmd " . "L"
             let s:nerd_tree_switch = 1
@@ -466,6 +469,7 @@ function! <SID>Trinity_Toggle()
             let s:source_explorer_switch = 0
         endif
         if s:nerd_tree_switch == 1
+            :set noautochdir
             VimFilerExplorer
             let s:nerd_tree_switch = 0
         endif
@@ -479,6 +483,7 @@ function! <SID>Trinity_Toggle()
         SrcExpl
         let s:source_explorer_switch = 1
         call <SID>Trinity_InitNERDTree()
+        :set noautochdir
         VimFilerExplorer
         silent! exe "wincmd " . "L"
         let s:nerd_tree_switch = 1
