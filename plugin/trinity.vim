@@ -418,16 +418,16 @@ function! <SID>Trinity_ToggleTagList()
     if s:Trinity_switch == 0
         if s:tag_list_switch == 0
             call <SID>Trinity_InitTagList()
-            Tlist
+            TagbarOpen
             let s:tag_list_switch = 1
         endif
     else
         if s:tag_list_switch == 1
-            TlistClose
+            TagbarClose
             let s:tag_list_switch = 0
         else
             call <SID>Trinity_InitTagList()
-            Tlist
+            TagbarOpen
             let s:tag_list_switch = 1
         endif
     endif
@@ -461,7 +461,7 @@ function! <SID>Trinity_Toggle()
 
     if s:Trinity_switch == 1
         if s:tag_list_switch == 1
-            TlistClose
+            TagbarClose
             let s:tag_list_switch = 0
         endif
         if s:source_explorer_switch == 1
@@ -477,7 +477,7 @@ function! <SID>Trinity_Toggle()
         let s:Trinity_tabPage = 0
     else
         call <SID>Trinity_InitTagList()
-        Tlist
+        TagbarOpen
         let s:tag_list_switch = 1
         call <SID>Trinity_InitSourceExplorer()
         SrcExpl
